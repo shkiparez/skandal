@@ -245,8 +245,8 @@ section{padding-block:110px;position:relative}
 .map-fallback b{font-family:var(--display);font-size:22px;display:block;margin-bottom:6px}
 .map-fallback span{color:#b9ad9c;font-size:14px}
 @keyframes pulse{70%{box-shadow:0 0 0 26px rgba(168,130,90,0)}100%{box-shadow:0 0 0 0 rgba(168,130,90,0)}}
-.map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) sepia(.35) contrast(1.05)}
-.map-open{position:absolute;right:16px;bottom:16px;z-index:2}
+.map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.map-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
 .call-sheet{position:fixed;inset:0;z-index:90;display:grid;align-items:end;justify-items:center;background:rgba(18,17,16,.55);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s}
 .call-sheet.open{opacity:1;pointer-events:auto}
 .call-box{width:min(100%,460px);background:var(--cream);color:var(--ink);border-radius:28px 28px 0 0;padding:26px max(20px,env(safe-area-inset-left,0px)) calc(26px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px;transform:translateY(40px);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
@@ -320,7 +320,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .contacts{border-radius:28px 28px 0 0}
   .services{border-radius:28px;margin-inline:6px}
   .map-wrap{height:340px}
-  .map-open{left:16px;right:16px;justify-content:center}
+  .map-actions{display:grid;grid-template-columns:1fr}
+  .map-actions .btn{justify-content:center}
   .marquee{margin:0 -20px}
   .hero-visual{width:calc(100% - 28px)}
   .arch-frame{inset:10px -10px -10px 10px}
@@ -534,10 +535,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       </div>
     </div>
     <div class="wrap">
-      <div class="map-wrap rv-img">
+      <div class="map-wrap">
         <div class="map-fallback"><div><div class="pin"></div><b>ул. Пермякова, 63</b><span>Тюмень · ост. «Евгения Богдановича»</span></div></div>
-        <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D0%B5%D1%80%D0%BC%D1%8F%D0%BA%D0%BE%D0%B2%D0%B0%2C%2063&amp;z=16" title="Карта: Тюмень, ул. Пермякова, 63" loading="lazy" allowfullscreen></iframe>
-        <a class="btn btn-cream map-open" href="https://yandex.ru/maps/?text=%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D0%B5%D1%80%D0%BC%D1%8F%D0%BA%D0%BE%D0%B2%D0%B0%2C%2063" target="_blank" rel="noopener">Открыть карту <span class="arr">→</span></a>
+        <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%A1%D0%BA%D0%B0%D0%BD%D0%B4%D0%B0%D0%BB%2C%20%D0%B1%D0%B0%D1%80%D0%B1%D0%B5%D1%80%D1%88%D0%BE%D0%BF%2C%20%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D0%B5%D1%80%D0%BC%D1%8F%D0%BA%D0%BE%D0%B2%D0%B0%2C%2063&amp;z=17&amp;l=map" title="Карта: барбершоп Skандал, Тюмень, ул. Пермякова, 63" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="map-actions"><a class="btn btn-cream map-open" href="https://yandex.ru/maps/?text=%D0%A1%D0%BA%D0%B0%D0%BD%D0%B4%D0%B0%D0%BB%2C%20%D0%B1%D0%B0%D1%80%D0%B1%D0%B5%D1%80%D1%88%D0%BE%D0%BF%2C%20%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D0%B5%D1%80%D0%BC%D1%8F%D0%BA%D0%BE%D0%B2%D0%B0%2C%2063" target="_blank" rel="noopener">Открыть в Яндекс.Картах <span class="arr">→</span></a>
+        <a class="btn btn-ghost-c" href="https://2gis.ru/tyumen/search/%D0%A1%D0%BA%D0%B0%D0%BD%D0%B4%D0%B0%D0%BB%20%D0%9F%D0%B5%D1%80%D0%BC%D1%8F%D0%BA%D0%BE%D0%B2%D0%B0%2063" target="_blank" rel="noopener">Открыть в 2ГИС</a>
       </div>
     </div>
   </section>
